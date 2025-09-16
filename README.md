@@ -1,0 +1,1 @@
+First group assignment of Latinas In Cloud bootcamp, which consists of python/flask exercises.
