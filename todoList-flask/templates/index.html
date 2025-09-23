@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+        h1 { text-align: center; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .acciones a { margin-left: 10px; text-decoration: none; color: #007bff; }
+        .acciones a.eliminar { color: #dc3545; }
+        form { margin-top: 20px; }
+        input[type="text"] { width: 70%; padding: 8px; }
+        button { padding: 8px 12px; }
+    </style>
+</head>
+<body>
+    <h1>📋 Lista de Tareas</h1>
+
+    <form action="{{ url_for('agregar_tarea') }}" method="post">
+        <input type="text" name="tarea" placeholder="Nueva tarea..." required>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <ul>
+        {% for tarea in tareas %}
+        <li>
+            <span>{{ loop.index }}. {{ tarea }}</span>
+            <div class="acciones">
+                <a href="{{ url_for('editar_tarea', indice=loop.index0) }}">✏️ Editar</a>
+                <a class="eliminar" href="{{ url_for('eliminar_tarea', indice=loop.index0) }}">🗑️ Eliminar</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
