@@ -2,7 +2,7 @@ from agregar_carrito import agregarCarrito
 from generar_ticket import generarTicket
 
 def main():
-    print("¡Bienvenido a tu mercadito en línea!")
+    print("\n ¡Bienvenido a tu mercadito en línea!")
     carrito = agregarCarrito()
     if carrito:
         generarTicket(carrito)

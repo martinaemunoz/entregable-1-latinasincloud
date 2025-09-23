@@ -8,6 +8,6 @@ def calcularSubtotal(carrito):
     subtotal = 0
     for producto in carrito:
         # agregar a claveProductos
-            subtotal += claveProductos[producto]
+            subtotal += claveProductos[producto] # suma el precio del producto al subtotal
     return subtotal
 

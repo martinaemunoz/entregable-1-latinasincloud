@@ -18,3 +18,4 @@ def generarTicket(carrito):
         print(f"Descuento aplicado: -${descuento:.2f}")
     print(f"Total a pagar: ${total:.2f}")
     print("-------------------------------\n")
+    print("¡Gracias por tu compra!")

@@ -18,7 +18,7 @@ claveProductos = {
 
 def definirProductos(nombre, precio):
     if precio > 0:
-        return {nombre.strip().lower(): precio}
+        return {nombre.strip().lower(): precio} # retorna un diccionario con el producto y su precio
     else:
         print("El precio debe ser mayor a 0.")
         return None
